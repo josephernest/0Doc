@@ -15,7 +15,7 @@ The table of contents will be automatically generated.
 
 You can also:
 
-* Modify <title>...</title> with your own title
+* Modify `<title>...</title>` with your own title
 
 * Use your own `logo.png` file
 
@@ -25,7 +25,7 @@ Why another static documentation generator ?
 
 I discovered the great [Slate](https://github.com/lord/slate) project, but it requires to install `Ruby`, `bundler`, and it's just another layer on top of [middleman](https://middlemanapp.com/) static website generator. As I'm not a user of all these tools, I didn't find it confortable for me.
 
-That's why I decided to write this one-HTML-file solution, that:
+That's why I decided to write this single-HTML-file solution, that:
 
 * doesn't require any server (client side only)
 * only requires a few javascript libraries
