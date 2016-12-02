@@ -6,7 +6,7 @@ html, body { height: 100%; }
 #toc_ul { margin-top: 20px; }
 #toc_ul li { display: block; margin-bottom: 5px; }
 #toc_ul li a:hover { background-color: #2973c2; }
-#toc_ul li a { display: block; padding: 8px 15px 8px 10px; overflow-x: hidden; white-space: nowrap; text-overflow: ellipsis; color: white; text-decoration: none; font-weight: bold; }
+#toc_ul li a { display: block; padding: 8px 15px 8px 30px; overflow-x: hidden; white-space: nowrap; text-overflow: ellipsis; color: white; text-decoration: none; font-weight: bold; }
 
 #content { margin-left: 250px; top: 0; padding: 20px 20px 20px 30px; }
 #content li { margin-left: 20px; }
