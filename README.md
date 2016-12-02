@@ -1,7 +1,7 @@
-Writing
+0Doc
 =======
 
-**0Doc** is a single-file document writing-tool.
+**0Doc** is a single-file documentation writing-tool.
 
 Live version: [0Doc](https://josephernest.github.io/0Doc/).
 
@@ -10,7 +10,7 @@ Installation
 ----
 Just open `index.html` and that's it! No server needed.
 
-To edit your own documentation, just write it in Markdown syntax inside the `<div id="content"> ... </div>`. 
+To edit your own documentation, write it in Markdown syntax inside the `<div id="content"> ... </div>`. 
 The table of contents will be automatically generated.
 
 You can also:
@@ -43,4 +43,4 @@ MIT license
 
 Dependencies
 ---
-**Writing** uses [marked](https://github.com/chjj/marked).
+**0Doc** uses [marked](https://github.com/chjj/marked).
