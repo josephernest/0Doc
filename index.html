@@ -1,11 +1,7 @@
 <!-- 
-#
-# 0Doc 
-#
-# 0Doc is a documentation writing tool. Just write your doc with Markdown syntax in the #content div. 
-# 
+# 0Doc is a documentation writing tool. Just write your doc with Markdown syntax in the #content <div>. 
 # author:  Joseph Ernest (twitter: @JosephErnest)
-# url:     http://github.com/josephernest/0Doc
+# url:     https://github.com/josephernest/0Doc/
 # license: MIT license
  -->
 
@@ -70,19 +66,6 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <div id="footer"></div>
 </div>    
 
-<script>
-marked.setOptions({ });
-document.getElementById('content').innerHTML =  marked(document.getElementById('content').innerHTML);
-var toc = document.getElementById('toc_ul'); 
-var h1 = document.getElementsByTagName("h1");
-for (var i = 0; i < h1.length; i++) {
-     var li = document.createElement("li");
-     var a = document.createElement("a");
-     a.appendChild(document.createTextNode(h1[i].textContent));
-     a.href = '#' + h1[i].textContent.toLowerCase().replace(/[^\w]+/g, '-');
-     li.appendChild(a);
-     toc.appendChild(li);
-}
-</script>
+<script src="0doc.js"></script>
 </body>
 </html>
