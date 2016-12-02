@@ -17,6 +17,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.js"></script>
 <link rel="stylesheet" href="style.css" />
+<noscript>This page requires JavaScript.</noscript>
 </head>
 <body>
 <div id="content">
@@ -24,6 +25,8 @@
 <!-- Begin writing your doc here -->
 
 # Introduction
+
+![](http://i.imgur.com/Kyhqkt3.jpg)
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -34,7 +37,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 # Installation
 
-As stated by UserA on www.example.com
+As stated by @UserA on http://www.example.com:
 
 > Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -75,12 +78,11 @@ var h1 = document.getElementsByTagName("h1");
 for (var i = 0; i < h1.length; i++) {
      var li = document.createElement("li");
      var a = document.createElement("a");
-     a.href = '#';
-     a.value = h1[i].textContent;
+     a.appendChild(document.createTextNode(h1[i].textContent));
+     a.href = '#' + h1[i].textContent.toLowerCase().replace(/[^\w]+/g, '-');
      li.appendChild(a);
      toc.appendChild(li);
 }
-
 </script>
 </body>
 </html>
