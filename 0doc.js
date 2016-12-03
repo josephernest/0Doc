@@ -51,7 +51,6 @@ $('#toc a').click(function() {
     collapsenavbar();
 });
 
-//
 function collapsenavbar() {
     $('li ul').hide();  // hide all h2s
     $('a.current + ul').show();              // show the h2s next to a selected h1 item
@@ -116,7 +115,7 @@ $(window).scroll(function() {  // see http://stackoverflow.com/a/18564379/142209
 }).scroll();
 
 // search
-var results, currentIndex = 0, query = '';
+var results, currentIndex = 0;
 
 function jumpTo() {
     if (results.length) {
@@ -125,30 +124,26 @@ function jumpTo() {
         if (current.length) {
             current.addClass('currentsearch');
             viewporttop = current.offset().top - $(window).scrollTop();
-            if (viewporttop < 0 || viewporttop > 0.9 * $(window).height()) {    // scroll only if out of the viewport
+            if (viewporttop < 0 || viewporttop > 0.95 * $(window).height()) {    // scroll only if out of the viewport
                 $(window).scrollTop(current.offset().top);
             }
         }
     }
 }
 
+$('#inputsearch').on('input', function(e) {
+    $('#content').unmark().mark($('#inputsearch').val(), { separateWordSearch: true, done: function() { 
+        results = $('#content').find("mark");
+        currentIndex = -1;
+    }});
+});
+
 $('#inputsearch').keydown(function(e) {
     if (e.keyCode == 13) {
-        var newquery = $('#inputsearch').val();
-        if (newquery !== query) {
-            $('#content').unmark().mark(newquery, { separateWordSearch: true, done: function() {
-                results = $('#content').find("mark");
-                currentIndex = 0;
-                jumpTo();
-            }});
-            query = newquery;
-        }
-        else {
-            currentIndex += 1;
-            if (currentIndex < 0) { currentIndex = results.length - 1; }
-            if (currentIndex > results.length - 1) { currentIndex = 0; }
-            jumpTo();
-        }
+        currentIndex += e.shiftKey ? -1 : 1;       // shift+ENTER => search backwards
+        if (currentIndex < 0) { currentIndex = results.length - 1; }
+        if (currentIndex > results.length - 1) { currentIndex = 0; }
+        jumpTo();
     }
 });
 
@@ -159,7 +154,7 @@ $(window).keydown(function(e) {
         e.preventDefault();
         return false;
     }
-    else if ((e.ctrlKey && !e.altKey || e.metaKey) && e.keyCode == 70) {         // CTRL+F
+    else if ((e.ctrlKey && !e.altKey || e.metaKey) && e.keyCode == 70) {   // CTRL+F
         e.preventDefault();
         $('#inputsearch').select().focus();
     }
