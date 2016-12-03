@@ -13,7 +13,7 @@ Installation
 Just open `index.html` and that's it! No server needed.
 
 To edit your own documentation, write it in Markdown syntax inside the `<div id="content"> ... </div>`. 
-The table of contents will be automatically generated.
+The table of contents will be automatically generated on the fly.
 
 You can also:
 
@@ -25,9 +25,13 @@ You can also:
 Why another static documentation generator ?
 ----
 
-I discovered the great [Slate](https://github.com/lord/slate) project, but it requires to install `Ruby`, `bundler`, and it's just another layer on top of [middleman](https://middlemanapp.com/) static website generator. As I'm not a user of all these tools, I didn't find it confortable for me.
+I discovered the great [Slate](https://github.com/lord/slate) project, but it requires to install `Ruby`, `bundler`, and it's just another layer on top of [middleman](https://middlemanapp.com/) static website generator, which does most of the work. As I'm not a user of all these tools, I didn't find it confortable for me.
 
-That's why I decided to write this single-HTML-file solution that doesn't require any server (client side only).
+Moreover I don't like having to run a command to re-render HTML files each time you modify the documentation (that's often the case with static websites generators).
+
+That's why I decided to write this simple-HTML-file solution that doesn't require any server (client side only), and renders the output on the fly when you open `index.html`.
+
+In short, this means that you just have to edit your `index.html`, and not worry about anything else.
 
 About
 ----
@@ -39,6 +43,8 @@ License
 ----
 MIT license
 
+
 Dependencies
----
-**0Doc** uses [marked](https://github.com/chjj/marked).
+----
+
+0Doc uses jQuery, [marked](https://github.com/chjj/marked) for Markdown rendering and [mark.js](https://markjs.io/) for on-page search.

@@ -1,21 +1,24 @@
 * { margin: 0; padding: 0; border: 0; font-family: sans-serif; outline: 0; }
 html, body { height: 100%; }
-#left { width: 250px; position: fixed; left: 0; top: 0; background-color: #444; color: white; height: 100%; }
+#left { width: 250px; position: fixed; left: 0; top: 0; background-color: #444; color: white; height: 100%; overflow: auto; }
 #search { border-bottom: 1px solid #666; padding: 6px 10px 3px 10px; margin: 0 10px; }
-#inputsearch { background: #444;  margin: 0px 15px; color: white; font-weight: bold; width: 130px; }
+#inputsearch { background: #444;  margin: 0px 15px; color: white; font-weight: bold; width: 145px; }
 #toc { padding: 20px 0 15px 0; border-bottom: 1px dashed #666; }
-#toc_ul li { display: block; margin-bottom: 5px; }
+#toc_ul li { display: block; }
 #toc_ul li a:hover { background-color: #2973c2; }
 #toc_ul li a { display: block; padding: 8px 15px 8px 30px; overflow-x: hidden; white-space: nowrap; text-overflow: ellipsis; color: white; text-decoration: none; font-weight: bold; }
+#toc_ul li ul li a { display: block; padding: 2px 15px 2px 45px; font-weight: normal; }
+.current { background-color: #2973c2; }
 #footer { font-size: 10px; margin: 20px 30px; }
 #footer a { text-decoration: none; color: white; }
+.currentsearch { background-color: #ff8f3c; }
 
 #content { margin-left: 250px; top: 0; padding: 20px 20px 20px 30px; }
 #content li { margin-left: 20px; }
 #content code, #wmd-input { font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif; }
 #content p code { background-color: #f5f5f5; white-space: pre-wrap; padding: 3px 5px; font-size: 13px; }
 #content pre { background-color: #f5f5f5; padding: 5px; margin: 0.5em 0 1em; overflow-x: auto; word-wrap: normal; font-size: 13px; }
-#content blockquote { background-color: #defcff; padding: 10px; margin: 0.5em 0 1em; overflow-x: auto; word-wrap: normal; border-left: 2px solid #0ae2f5; }
+#content blockquote { background-color: #fff8dc; padding: 10px; margin: 0.5em 0 1em; overflow-x: auto; word-wrap: normal; border-left: 2px solid #ffeb8e; }
 #content blockquote p { margin-bottom: 0; }
 #content hr { background-color: #ddd; color: #ddd; height: 1px; margin-bottom: 15px; margin-top: 15px; }
 #content h1, #content h2, #content h3 { margin-bottom: 0.5em; }
