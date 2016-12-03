@@ -13,6 +13,7 @@ html, body { height: 100%; }
 #footer a { text-decoration: none; color: white; }
 mark { background-color: #ffff99; }
 .currentsearch { background-color: #ffa663; }
+#nav { display: none; background-color: #999; position: fixed; top: 0; left: 0; color: white; font-size: 12px; cursor: pointer; padding: 5px 3px; }
 
 #content { margin-left: 250px; top: 0; padding: 20px 20px 20px 30px; }
 #content li { margin-left: 20px; }
@@ -32,3 +33,9 @@ mark { background-color: #ffff99; }
 #content table tr { background-color: #fff; border-top: 1px solid #ccc; }
 #content table tr:nth-child(2n) { background-color: #f8f8f8; }
 #content a { text-decoration: none; color: #07c; }
+
+@media screen and (max-width: 600px) {
+    #nav { display: block; }
+    #content { margin-left: 0; }
+    .collapsed { display: none !important; }
+ }

@@ -150,7 +150,7 @@ $('#inputsearch').keydown(function(e) {
 // clear searches
 $(window).keydown(function(e) {
     if (e.keyCode == 27) {
-        $('#content').unmark(); $('#inputsearch').val(""); query = '';
+        $('#content').unmark(); $('#inputsearch').val("");
         e.preventDefault();
         return false;
     }
@@ -161,5 +161,13 @@ $(window).keydown(function(e) {
 });
 
 $('#content').click(function(e) {
-    $('#content').unmark(); $('#inputsearch').val(""); query = '';
+    $('#content').unmark(); $('#inputsearch').val("");
+    $('#left').addClass('collapsed');
+    $('#nav').removeClass('collapsed');
+});
+
+// mobile devices
+$('#nav').click(function() {
+    $('#nav').addClass('collapsed');
+    $('#left').removeClass('collapsed');
 });
