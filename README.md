@@ -33,6 +33,18 @@ That's why I decided to write this simple-HTML-file solution that doesn't requir
 
 In short, this means that you just have to edit your `index.html`, and not worry about anything else.
 
+Todo
+----
+
+We are currently testing this feature: including external files with a simple line inside `<div id="content"> ... </div>`:
+
+    <file src="md/_welcome-to-derp.md"></file>
+
+[This is an example of use](https://josephernest.github.io/0Doc-chip) for C.H.I.P.'s documentation, forked from http://docs.getchip.com/chip.html.
+
+[More about this feature here](https://github.com/josephernest/0Doc/issues/3).
+
+
 About
 ----
 Author: Joseph Ernest ([@JosephErnest](https://twitter.com/JosephErnest))
