@@ -1,7 +1,7 @@
 0Doc
 =======
 
-**0Doc** is a simple documentation writing-tool. 
+**0Doc** is a simple documentation writing tool. 
 
 Live version: [0Doc](https://josephernest.github.io/0Doc/).
 

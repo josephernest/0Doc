@@ -18,7 +18,7 @@
             if (client.responseText !== '' && !done) { 
                 element.outerHTML = client.responseText; 
                 done = true; 
-                if ($('#content file').length === 0)    // no more external file <file src="..."></src> to be loaded
+                if ($('#content file').length === 0)    // no more external file <file src="..."></file> to be loaded
                     render();
             } 
         };
