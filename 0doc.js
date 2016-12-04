@@ -158,7 +158,7 @@
             e.preventDefault();
             return false;
         }
-        else if ((e.ctrlKey && !e.altKey || e.metaKey) && e.keyCode == 70) {   // CTRL+F
+        else if (((e.ctrlKey && !e.altKey || e.metaKey) && e.keyCode == 70) || (e.keyCode == 114)) {   // CTRL+F or F3
             e.preventDefault();
             $('#inputsearch').select().focus();
         }
