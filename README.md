@@ -1,7 +1,7 @@
 0Doc
 =======
 
-**0Doc** is a single-file documentation writing-tool.
+**0Doc** is a simple documentation writing-tool. 
 
 Live version: [0Doc](https://josephernest.github.io/0Doc/).
 
@@ -10,10 +10,10 @@ Live version: [0Doc](https://josephernest.github.io/0Doc/).
 
 Installation
 ----
-Just open `index.html` and that's it! No server needed.
+Just open `index.html` and that's it!
 
 To edit your own documentation, write it in Markdown syntax inside the `<div id="content"> ... </div>`. 
-The table of contents will be automatically generated on the fly.
+The table of contents will be automatically generated on the fly. No other tool needed.
 
 You can also:
 
@@ -29,7 +29,7 @@ I discovered the great [Slate](https://github.com/lord/slate) project, but it re
 
 Moreover I don't like having to run a command to re-render HTML files each time you modify the documentation (that's often the case with static websites generators).
 
-That's why I decided to write this simple solution that doesn't require any server (client side only), and renders the output on the fly when you open `index.html`.
+That's why I decided to write this simple solution **that doesn't require any tool like** Ruby, Python, Perl, etc. The output is rendered on the fly when you open `index.html`.
 
 In short, this means that you just have to edit your `index.html`, and not worry about anything else.
 
