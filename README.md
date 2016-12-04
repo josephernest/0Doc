@@ -7,6 +7,7 @@ Live version: [0Doc](https://josephernest.github.io/0Doc/).
 
 [![](http://gget.it/rwx9ovzb/screenshot_500px.jpg)](https://josephernest.github.io/0Doc/)
 
+[This is an example of use](https://josephernest.github.io/0Doc-chip) for C.H.I.P.'s documentation, forked from http://docs.getchip.com/chip.html.
 
 Installation
 ----
@@ -33,17 +34,16 @@ That's why I decided to write this simple solution *that doesn't require any too
 
 In short, this means that you just have to edit your `index.html`, and not worry about anything else.
 
-Todo
+External files
 ----
 
-We are currently testing this feature: include external files with a simple line inside `<div id="content"> ... </div>`:
+It's possible to include external files with:
 
-    <file src="chapter1.md"></file>
-
-[This is an example of use](https://josephernest.github.io/0Doc-chip) for C.H.I.P.'s documentation, forked from http://docs.getchip.com/chip.html.
-
-[More about this feature here](https://github.com/josephernest/0Doc/issues/3).
-
+    <div id="content">
+        <file src="chapter1.md"></file>
+    </div>
+    
+More about this feature [here](https://github.com/josephernest/0Doc/issues/3).
 
 About
 ----
