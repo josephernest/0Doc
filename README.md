@@ -36,9 +36,9 @@ In short, this means that you just have to edit your `index.html`, and not worry
 Todo
 ----
 
-We are currently testing this feature: including external files with a simple line inside `<div id="content"> ... </div>`:
+We are currently testing this feature: include external files with a simple line inside `<div id="content"> ... </div>`:
 
-    <file src="md/_welcome-to-derp.md"></file>
+    <file src="chapter1.md"></file>
 
 [This is an example of use](https://josephernest.github.io/0Doc-chip) for C.H.I.P.'s documentation, forked from http://docs.getchip.com/chip.html.
 
