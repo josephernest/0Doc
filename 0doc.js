@@ -11,13 +11,11 @@
     $('#content file').each(function(index) {
         var filename = $(this).attr('src');
         var element = this;
-        var done = false;
         var client = new XMLHttpRequest();
         client.open('GET', filename, true);
         client.onreadystatechange = function() { 
-            if (client.responseText !== '' && !done) { 
+            if (client.readyState === 4) { 
                 element.outerHTML = client.responseText; 
-                done = true; 
                 if ($('#content file').length === 0)    // no more external file <file src="..."></file> to be loaded
                     render();
             } 
