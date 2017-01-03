@@ -1,4 +1,4 @@
-/* 
+/*
 # 0Doc is a documentation writing tool.
 # author:  Joseph Ernest (twitter: @JosephErnest)
 # url:     https://github.com/josephernest/0Doc/
@@ -13,12 +13,12 @@
         var element = this;
         var client = new XMLHttpRequest();
         client.open('GET', filename, true);
-        client.onreadystatechange = function() { 
-            if (client.readyState === 4) { 
-                element.outerHTML = client.responseText; 
+        client.onreadystatechange = function() {
+            if (client.readyState === 4) {
+                element.outerHTML = client.responseText;
                 if ($('#content file').length === 0)    // no more external file <file src="..."></file> to be loaded
                     render();
-            } 
+            }
         };
         client.send();
     });
@@ -33,7 +33,7 @@
         $('#content').html(marked($('#content').text())).show();
 
         // Build TOC, inspired of http://stackoverflow.com/a/40946392/1422096
-        var toc = document.getElementById('toc_ul'); 
+        var toc = document.getElementById('toc_ul');
         var list = document.querySelectorAll("h1,h2");
         var tocArr = [], cur;
         for (var i = 0; i < list.length; i++) {
@@ -62,13 +62,13 @@
                     ul.appendChild(li2);
                 }
                 li.appendChild(ul);
-            } 
+            }
             toc.appendChild(li);
         }
 
         $('#toc a').click(function() {
             ignorenextscrollevent = 1;
-            clearTimeout(willberendered); 
+            clearTimeout(willberendered);
             willberendered = undefined;
             $('a.current').removeClass('current');
             $(this).addClass('current');
@@ -79,7 +79,7 @@
             $('li ul').hide();                       // hide all h2s
             $('a.current + ul').show();              // show the h2s next to a selected h1 item
             $('a.current').parent().parent().show(); // show the h1 related to a selected h2 item (i.e. its grandparent)
-        }    
+        }
 
         // Select this element in the navbar, and scroll to it if necessary
         function selectcurrentnavbar(selectedid) {
@@ -124,12 +124,12 @@
                                 selected = this;
                             }
                             else {
-                                return false;  // break in a each 
+                                return false;  // break in a each
                             }
                         });
                         var selectedid = '#' + $(selected).attr('id');
                         selectcurrentnavbar(selectedid);
-         
+
                         window.history.pushState('', '', selectedid);
                     }
                     willberendered = undefined;
@@ -155,11 +155,24 @@
             }
         }
 
-        $('#inputsearch').on('input', function(e) {
-            $('#content').unmark().mark($('#inputsearch').val(), { separateWordSearch: true, done: function() { 
-                results = $('#content').find("mark");
-                currentIndex = -1;
-            }});
+        var $input = $('#inputsearch'),
+            $ctx = $('#content'),
+            timeout = null;
+        $input.on('input', function(e) {
+            clearTimeout(timeout);
+            timeout = setTimeout(function(){
+                $ctx.unmark({
+                    done: function(){
+                        $ctx.mark($input.val(), {
+                            separateWordSearch: false,
+                            done: function() {
+                                results = $ctx.find("mark");
+                                currentIndex = -1;
+                            }
+                        });
+                    }
+                });
+            }, 350);
         });
 
         $('#inputsearch').keydown(function(e) {
