@@ -172,7 +172,7 @@
                         });
                     }
                 });
-            }, 350);
+            }, 200);
         });
 
         $('#inputsearch').keydown(function(e) {
